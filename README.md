@@ -74,5 +74,18 @@ If you clone this repo, you’ll need to create your own `serverless.yml` file.
         "message": "Invalid email address"
     }
 
+---
+
+## Snap Shots
+
+### Postman Success
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/3a90878e-8017-4991-831b-d0729e155c42" />
+
+### Gmail
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/5b15403f-1c87-4222-a978-956e751f04ed" />
+
+### Postman Error
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/eeecfd18-de54-485e-836a-8ecbe1a20ee8" />
+
 
 
