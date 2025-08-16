@@ -57,9 +57,9 @@ If you clone this repo, you’ll need to create your own `serverless.yml` file.
 
 ## Request Body (JSON)
     {
-    "receiver_email": "receiver@example.com",
-    "subject": "Test Email",
-    "body_text": "Hello! This is a test email from Django Email API."
+        "receiver_email": "receiver@example.com",
+        "subject": "Test Email",
+        "body_text": "Hello! This is a test email from Django Email API."
     }
 
 ## Example Success Response
