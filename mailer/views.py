@@ -14,7 +14,10 @@ def send_email_view(request):
 
     if not receiver or not subject or not body:
         return Response(
-            {"error": "receiver_email, subject and body_text are required"},
+            {
+                "status": "error",
+                "message": "receiver_email, subject and body_text are required",
+            },
             status=status.HTTP_400_BAD_REQUEST,
         )
 
@@ -27,22 +30,19 @@ def send_email_view(request):
             fail_silently=False,
         )
         return Response(
-            {"message": "Email sent successfully!"}, status=status.HTTP_200_OK
+            {
+                "status": "success",
+                "message": "Email sent successfully!",
+            },
+            status=status.HTTP_200_OK,
         )
     except BadHeaderError:
         return Response(
-            {"error": "Invalid header found."}, status=status.HTTP_400_BAD_REQUEST
+            {"status": "error", "message": "Invalid header found."},
+            status=status.HTTP_400_BAD_REQUEST,
         )
     except Exception as e:
-        return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-
-def test_email(request):
-    send_mail(
-        "Hello from Django",
-        "This is a test email sent via Gmail SMTP.",
-        "pavannnimkar@gmail.com",
-        ["nimkarpavan142004@gmail.com"],
-        fail_silently=False,
-    )
-    return JsonResponse({"status": "sent"})
+        return Response(
+            {"status": "error", "message": str(e)},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        )
